@@ -28,7 +28,7 @@ public class SwaggerConfig {
     /**
      *  定义分隔符
      */
-    private static final String SPLITOR = ";";
+    private static final String SEPARATOR = ";";
 
     /**
      * 创建api
@@ -54,13 +54,13 @@ public class SwaggerConfig {
      */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("pim系统api文档")
-                .description("pim系统api文档")
+                .title("SpringBoot项目案例")
+                .description("基于SpringBoot框架,集成各项常用配置及插件")
                 .version("1.0")
-                .termsOfServiceUrl("/pim")
-                .contact(new Contact("研发一部", "https://www.zy.com",null))
-                .license("The Apache License, Version 2.0")
-                .licenseUrl("http://www.apache.org/licenses/LICENSE-2.0.html")
+                .termsOfServiceUrl(null)
+                .contact(new Contact("蒋楠鑫", null,null))
+                .license(null)
+                .licenseUrl(null)
                 .build();
     }
 
@@ -76,7 +76,7 @@ public class SwaggerConfig {
     private static Function<Class<?>, Boolean> handlerPackage(String basePackage)     {
         return input -> {
             // 循环判断匹配
-            for (String strPackage : basePackage.split(SPLITOR)) {
+            for (String strPackage : basePackage.split(SEPARATOR)) {
                 String[] startAndEndStr = strPackage.split("\\.\\*\\.");
                 if(startAndEndStr.length > 0){
                     boolean isMatch = false;
