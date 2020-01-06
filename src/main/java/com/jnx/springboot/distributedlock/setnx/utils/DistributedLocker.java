@@ -1,6 +1,6 @@
-package com.jnx.springboot.distributedlock.redislock.utils;
+package com.jnx.springboot.distributedlock.setnx.utils;
 
-import com.jnx.springboot.distributedlock.redislock.entity.Lock;
+import com.jnx.springboot.distributedlock.setnx.entity.Lock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +17,12 @@ import java.util.concurrent.TimeUnit;
  * @date 2019-10-18
  */
 @Component
-public class DistributedLockHandler {
+public class DistributedLocker implements DistributedLockHandler{
 	
 	/**
 	 * 日志打印
 	 */
-	private static final Logger LOGGER = LoggerFactory.getLogger(DistributedLockHandler.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(DistributedLocker.class);
 	/**
 	 * 超时时间 --- 10秒
 	 */
@@ -34,7 +34,7 @@ public class DistributedLockHandler {
 	/**
 	 * 持有锁的过期时间 --- 20秒
 	 */
-	private static final long LOCK_EXPIRETIME = 20*1000L;
+	private static final long LOCK_EXPIRE_TIME = 20*1000L;
 	
 	/**
 	 * redis缓存操作工具类
@@ -50,6 +50,7 @@ public class DistributedLockHandler {
 	 * @param lockExpireTime    持有锁的过期时间(ms)
 	 * @return  是否获取到锁
 	 */
+	@Override
 	public boolean getLock(Lock lock, long timeOut, long tryInterval, long lockExpireTime){
 		//锁对象非空判断
 		if (lock == null || StringUtils.isEmpty(lock.getName()) || StringUtils.isEmpty(lock.getValue())){
@@ -90,14 +91,16 @@ public class DistributedLockHandler {
 	 * @param lock      锁对象
 	 * @return  是否获取到锁
 	 */
+	@Override
 	public boolean getLock(Lock lock){
-		return getLock(lock,TIME_OUT,TRY_INTERVAL,LOCK_EXPIRETIME);
+		return getLock(lock,TIME_OUT,TRY_INTERVAL,LOCK_EXPIRE_TIME);
 	}
 	
 	/**
 	 * 释放分布式锁
 	 * @param lock      锁对象
 	 */
+	@Override
 	public void releaseLock(Lock lock){
 		if (lock != null && !StringUtils.isEmpty(lock.getName())){
 			template.delete(lock.getName());

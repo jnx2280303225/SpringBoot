@@ -1,8 +1,5 @@
 package com.jnx.springboot.config;
 
-import com.google.common.base.Function;
-import com.google.common.base.Optional;
-import com.google.common.base.Predicate;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.request.async.DeferredResult;
@@ -14,6 +11,10 @@ import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+import java.util.Optional;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 
 /**
@@ -29,6 +30,10 @@ public class SwaggerConfig {
      *  定义分隔符
      */
     private static final String SEPARATOR = ";";
+    /**
+     * 项目根目录
+     */
+    private static final String BASE_PACKAGE = "com.jnx.springboot";
 
     /**
      * 创建api
@@ -42,7 +47,7 @@ public class SwaggerConfig {
                 .useDefaultResponseMessages(false)
                 .forCodeGeneration(true)
                 .select()
-                .apis(basePackage("com.jnx.springboot"))
+                .apis(basePackage()::test)
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());
@@ -66,20 +71,19 @@ public class SwaggerConfig {
 
     /**
      * 自定义包匹配规则支持;号及单*号通配符
-     * @param basePackage   基础包名
      * @return  包名统配*
      */
-    private static Predicate<RequestHandler> basePackage(String basePackage) {
-        return input -> declaringClass(input).transform(handlerPackage(basePackage)).or(true);
+    private static Predicate<RequestHandler> basePackage() {
+        return input -> declaringClass(input).map(handlerPackage()).orElse(true);
     }
 
-    private static Function<Class<?>, Boolean> handlerPackage(String basePackage)     {
+    private static Function<Class<?>, Boolean> handlerPackage()     {
         return input -> {
             // 循环判断匹配
-            for (String strPackage : basePackage.split(SEPARATOR)) {
+            for (String strPackage : BASE_PACKAGE.split(SEPARATOR)) {
                 String[] startAndEndStr = strPackage.split("\\.\\*\\.");
                 if(startAndEndStr.length > 0){
-                    boolean isMatch = false;
+                    boolean isMatch;
                     if(startAndEndStr.length > 1){
                         isMatch = input.getPackage().getName().startsWith(startAndEndStr[0]) && input.getPackage().getName().endsWith(startAndEndStr[1]);
                     }else{
@@ -89,14 +93,13 @@ public class SwaggerConfig {
                         return true;
                     }
                 }
-
             }
             return false;
         };
     }
 
     private static Optional<? extends Class<?>> declaringClass(RequestHandler input) {
-        return Optional.fromNullable(input.declaringClass());
+        return Optional.ofNullable(input.declaringClass());
     }
 
 }

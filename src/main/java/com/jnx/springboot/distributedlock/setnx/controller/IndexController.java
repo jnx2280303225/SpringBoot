@@ -1,8 +1,8 @@
-package com.jnx.springboot.distributedlock.redislock.controller;
+package com.jnx.springboot.distributedlock.setnx.controller;
 
 import com.jnx.springboot.common.msg.Result;
-import com.jnx.springboot.distributedlock.redislock.entity.Lock;
-import com.jnx.springboot.distributedlock.redislock.utils.DistributedLockHandler;
+import com.jnx.springboot.distributedlock.setnx.entity.Lock;
+import com.jnx.springboot.distributedlock.setnx.utils.DistributedLockHandler;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2019-10-18
  */
 @RestController
-@RequestMapping("isMatch")
+@RequestMapping("setnx")
 @Api(tags = "分布式锁基于redis原生java代码")
 public class IndexController {
 	

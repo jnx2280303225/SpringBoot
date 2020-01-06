@@ -1,4 +1,4 @@
-package com.jnx.springboot.demo;
+package com.jnx.springboot.javase;
 
 /**
  * JavaSE测试案例

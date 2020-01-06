@@ -2,6 +2,7 @@ server:
   port: 12468
 
 spring:
+  #redis配置
   redis:
     host: localhost
     port: 6379
@@ -12,3 +13,8 @@ spring:
         max-wait: 1ms     #连接池最大阻塞等待时间
         max-idle: 10      #连接池中最大空闲连接
         min-idle: 5       #连接池中最小空闲连接
+
+  #kafka配置
+  kafka:
+    consumer:
+      bootstrap-servers: 

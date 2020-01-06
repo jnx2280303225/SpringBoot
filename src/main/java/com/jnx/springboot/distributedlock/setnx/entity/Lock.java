@@ -1,4 +1,4 @@
-package com.jnx.springboot.distributedlock.redislock.entity;
+package com.jnx.springboot.distributedlock.setnx.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -17,9 +17,15 @@ import java.io.Serializable;
 public class Lock implements Serializable {
 	
 	private static final long serialVersionUID = 8391622783882125191L;
-
+	
+	/**
+	 * 锁的名称
+	 */
 	private String name;
 	
+	/**
+	 * 锁的值
+	 */
 	private String value;
 	
 }
