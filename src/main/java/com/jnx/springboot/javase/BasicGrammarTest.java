@@ -8,6 +8,8 @@ package com.jnx.springboot.javase;
 public class BasicGrammarTest {
 	
 	public static void main(String[] args) {
+		//1.测试方法和变量支持中文名
+		//2.测试位运算
 		测试();
 	}
 	
