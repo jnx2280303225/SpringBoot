@@ -1,5 +1,8 @@
 package com.jnx.springboot.javase;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * JavaSE测试案例
  * @author 蒋楠鑫
@@ -8,6 +11,8 @@ package com.jnx.springboot.javase;
 public class BasicGrammarTest {
 	
 	public static void main(String[] args) {
+		//HashSet
+		Set set = new HashSet();
 		//1.测试方法和变量支持中文名
 		//2.测试位运算
 		测试();
