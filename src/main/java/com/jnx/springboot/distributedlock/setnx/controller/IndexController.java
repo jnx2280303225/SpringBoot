@@ -28,7 +28,7 @@ public class IndexController {
 	
 	@ApiOperation("分布式锁测试")
 	@GetMapping("index")
-	public Result index(){
+	public Result<String> index(){
 		Lock lock = new Lock();
 		lock.setName("自定义锁");
 		lock.setValue("我是分布式锁");
@@ -42,7 +42,7 @@ public class IndexController {
 			distributedLockHandler.releaseLock(lock);
 			return Result.ok("获取到了锁,执行了方法xxx");
 		}
-		return Result.error("没有获取到锁,直接返回");
+		return Result.error("没有获取到锁,直接返回",null);
 	}
 
 }

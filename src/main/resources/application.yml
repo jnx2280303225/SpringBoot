@@ -14,7 +14,7 @@ spring:
         max-idle: 10      #连接池中最大空闲连接
         min-idle: 5       #连接池中最小空闲连接
 
-  #kafka配置
-  kafka:
-    consumer:
-      bootstrap-servers: 
+#  #kafka配置
+#  kafka:
+#    consumer:
+#      bootstrap-servers:

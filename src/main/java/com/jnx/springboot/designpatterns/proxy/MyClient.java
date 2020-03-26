@@ -11,9 +11,8 @@ public class MyClient {
 	
 	public static void main(String[] args) {
 		ISubject iSubject = new SubjectImpl();
-		Class[] classes = {ISubject.class};
 		//获取代理对象
-		ISubject proxy = (ISubject) Proxy.newProxyInstance(MyClient.class.getClassLoader(), classes, new MyInvocationHandler(iSubject));
+		ISubject proxy = (ISubject) Proxy.newProxyInstance(MyClient.class.getClassLoader(), new Class[]{ISubject.class}, new MyInvocationHandler(iSubject));
 		proxy.getData();
 	}
 }

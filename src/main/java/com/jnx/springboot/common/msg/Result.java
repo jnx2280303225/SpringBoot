@@ -53,39 +53,11 @@ public class Result<T> implements Serializable {
      * 如果参数带有自定义信息枚举ErrorMsgEnum，code取参数枚举的code，message取参数枚举的desc
      * 如果参数带有String msg，message取参数msg
      */
-    public static Result error() {
-        return error(InfoMsgEnum.INTERNAL_SERVER_ERROR.code,InfoMsgEnum.INTERNAL_SERVER_ERROR.msg);
-    }
-
-    public static Result error(Integer code,String msg) {
-        Result r = new Result();
-        r.code = code;
-        r.msg = msg;
-        return r;
-    }
-    
-    public static Result error(String msg) {
-        Result r = new Result();
-        r.code = InfoMsgEnum.INTERNAL_SERVER_ERROR.code;
-        r.msg = msg;
-        return r;
-    }
-    
     public static <T> Result<T> error(String msg,T data) {
         Result<T> r = new Result<>();
         r.code = InfoMsgEnum.INTERNAL_SERVER_ERROR.code;
         r.msg = msg;
         r.data = data;
-        return r;
-    }
-
-    public static Result ok() {
-        return new Result();
-    }
-
-    public static Result ok(String msg) {
-        Result r = new Result();
-        r.msg = msg;
         return r;
     }
 

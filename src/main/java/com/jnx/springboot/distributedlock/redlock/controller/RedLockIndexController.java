@@ -28,13 +28,13 @@ public class RedLockIndexController {
 	
 	@ApiOperation("分布式锁测试")
 	@GetMapping("index")
-	public Result index(){
+	public Result<String> index(){
 		try {
 			RedisLocker.lock("测试",workService);
 			return Result.ok("插入一条数据");
 		} catch (Exception e) {
 			e.printStackTrace();
-			return Result.ok("未获取到锁!!!");
+			return Result.error("未获取到锁!!!",null);
 		}
 	}
 	
