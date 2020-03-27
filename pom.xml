@@ -22,6 +22,8 @@
         <swagger.bootstrap.ui.version>1.9.1</swagger.bootstrap.ui.version>
         <springfox-spring-web.version>2.9.2</springfox-spring-web.version>
         <redisson.version>3.7.0</redisson.version>
+        <!--docker镜像名称-->
+        <docker.image.prefix>jnx</docker.image.prefix>
     </properties>
 
     <dependencies>
@@ -146,6 +148,24 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <skip>true</skip>
+                </configuration>
+            </plugin>
+
+            <!-- Docker maven plugin -->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.13</version>
+                <configuration>
+                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                    <dockerDirectory>src/main/docker</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
                 </configuration>
             </plugin>
         </plugins>
