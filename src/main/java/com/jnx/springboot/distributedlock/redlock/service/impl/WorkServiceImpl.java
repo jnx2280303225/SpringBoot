@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class WorkServiceImpl implements WorkService {
+
 	/**
 	 * 保存数据
 	 */
