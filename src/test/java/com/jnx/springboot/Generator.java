@@ -12,7 +12,7 @@ import org.junit.Test;
  * @author 蒋楠鑫
  * @date 2019-12-05
  */
-public class GeneratorTest {
+public class Generator {
 	
 	/**
 	 * 数据库类型(MySQL SQLServer Oracle等)
@@ -59,10 +59,10 @@ public class GeneratorTest {
 
 	@Test
 	public void generateCode() {
-		generateByTables(SERVICE_NAME_START_WITH_I, PACKAGE_NAME, TABLE_NAMES);
+		generateByTables(TABLE_NAMES);
 	}
 
-	private void generateByTables(boolean serviceNameStartWithI, String packageName, String... tableNames) {
+	private void generateByTables(String... tableNames) {
 		GlobalConfig config = new GlobalConfig();
 		DataSourceConfig dataSourceConfig = new DataSourceConfig();
 		dataSourceConfig.setDbType(DB_TYPE)
@@ -93,7 +93,7 @@ public class GeneratorTest {
 				.setAuthor("蒋楠鑫")
 				.setOutputDir(OUT_PUT_DIR)
 				.setFileOverride(true);
-		if (!serviceNameStartWithI) {
+		if (!SERVICE_NAME_START_WITH_I) {
 			config.setServiceName("%sService");
 		}
 		new AutoGenerator().setGlobalConfig(config)
@@ -102,7 +102,7 @@ public class GeneratorTest {
 				//.setTemplate(tc)
 				.setPackageInfo(
 						new PackageConfig()
-								.setParent(packageName)
+								.setParent(PACKAGE_NAME)
 								.setController("controller")
 								.setEntity("entity")
 				).execute();
