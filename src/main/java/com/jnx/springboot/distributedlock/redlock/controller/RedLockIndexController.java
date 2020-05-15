@@ -1,6 +1,6 @@
 package com.jnx.springboot.distributedlock.redlock.controller;
 
-import com.jnx.springboot.common.msg.Result;
+import com.jnx.springboot.common.message.Result;
 import com.jnx.springboot.distributedlock.redlock.service.WorkService;
 import com.jnx.springboot.distributedlock.redlock.utils.RedisLocker;
 import io.swagger.annotations.Api;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * redis推荐的redlock方式实现分布式锁
+ *
  * @author 蒋楠鑫
  * @date 2019-11-22
  */
@@ -19,23 +20,23 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("redlock")
 @Api(tags = "redis推荐的redlock方式实现分布式锁")
 public class RedLockIndexController {
-	
+
 	/**
 	 * 处理业务的服务层
 	 */
 	@Autowired
 	private WorkService workService;
-	
+
 	@ApiOperation("分布式锁测试")
 	@GetMapping("index")
-	public Result<String> index(){
+	public Result<String> index() {
 		try {
-			RedisLocker.lock("测试",workService);
+			RedisLocker.lock("测试", workService);
 			return Result.ok("插入一条数据");
 		} catch (Exception e) {
 			e.printStackTrace();
-			return Result.error("未获取到锁!!!",null);
+			return Result.error("未获取到锁!!!");
 		}
 	}
-	
+
 }

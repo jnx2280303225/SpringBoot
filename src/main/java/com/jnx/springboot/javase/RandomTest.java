@@ -5,11 +5,12 @@ import java.util.Scanner;
 
 /**
  * 从0-n之前取k个不重复的随机数
+ *
  * @author 蒋楠鑫
  * @date 2020-02-26
  */
 public class RandomTest {
-	
+
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("请输入一个正整数:");
@@ -25,7 +26,7 @@ public class RandomTest {
 		Random random = new Random();
 		for (int i = 0; i < k; i++) {
 			//随机数取索引
-			int index = random.nextInt(n-i) + i;
+			int index = random.nextInt(n - i) + i;
 			int temp = arr[i];
 			arr[i] = arr[index];
 			arr[index] = temp;
@@ -38,8 +39,8 @@ public class RandomTest {
 			sb.append(arr[i]).append(",");
 		}
 		//去掉最后一个逗号
-		sb.deleteCharAt(sb.length()-1);
+		sb.deleteCharAt(sb.length() - 1);
 		System.out.print(sb.toString() + "]");
 	}
-	
+
 }

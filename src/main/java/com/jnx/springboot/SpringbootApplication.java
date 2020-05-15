@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * 项目启动类
+ *
  * @author 蒋楠鑫
  * @date 2019-10-17
  */
