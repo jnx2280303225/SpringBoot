@@ -1,4 +1,4 @@
-package com.jnx.springboot.concurrent.form;
+package com.jnx.springboot.concurrent.vo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -6,39 +6,33 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
- * 前端传入的商品信息
+ * 返回给前端的商品信息对象
  *
  * @author 蒋楠鑫
- * @date 2020/5/15
+ * @date 2020/5/21
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel("用户输入的商品信息")
-public class ProductForm implements Serializable {
+@ApiModel("展示的单条商品信息")
+public class ProductInfoVO implements Serializable {
 
-	private static final long serialVersionUID = -1793721806276369019L;
+	private static final long serialVersionUID = 8823047691710489548L;
+
+	@ApiModelProperty("商品号")
+	private String productNo;
 
 	@ApiModelProperty("商品名称")
-	@NotEmpty
 	private String name;
 
-	@ApiModelProperty("数量")
-	@NotNull
+	@ApiModelProperty("库存数量")
 	private Long number;
 
 	@ApiModelProperty("单价")
-	@NotNull
 	private Long price;
-
-	@ApiModelProperty("状态（1-启用，0-停用）")
-	@NotNull
-	private Integer status;
 
 	@ApiModelProperty("备注")
 	private String remark;

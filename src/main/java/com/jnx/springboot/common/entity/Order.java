@@ -32,16 +32,10 @@ public class Order implements Serializable {
 	private Integer id;
 
 	/**
-	 * 订单状态（0-未支付，1-已支付）
+	 * 订单状态（0-未支付，1-已支付，2-已取消，3-已删除，4-已退款）
 	 */
 	@TableField("status")
 	private Integer status;
-
-	/**
-	 * 数量
-	 */
-	@TableField("number")
-	private Integer number;
 
 	/**
 	 * 创建时间
@@ -54,6 +48,12 @@ public class Order implements Serializable {
 	 */
 	@TableField("updated")
 	private LocalDateTime updated;
+
+	/**
+	 * 数量
+	 */
+	@TableField("number")
+	private Long number;
 
 	/**
 	 * 金额（单位：分）

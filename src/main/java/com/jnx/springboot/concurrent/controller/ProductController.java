@@ -3,14 +3,14 @@ package com.jnx.springboot.concurrent.controller;
 import com.jnx.springboot.common.message.Result;
 import com.jnx.springboot.concurrent.form.ProductForm;
 import com.jnx.springboot.concurrent.service.ProductInfoService;
+import com.jnx.springboot.concurrent.vo.ProductInfoVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * 商品模块控制器
@@ -32,8 +32,14 @@ public class ProductController {
 
 	@ApiOperation("保存商品信息")
 	@PostMapping("saveProduct")
-	public Result<String> saveProduct(@RequestBody ProductForm productForm){
+	public Result<String> saveProduct(@RequestBody ProductForm productForm) {
 		productInfoService.saveProduct(productForm);
-		return Result.ok("保存成功！");
+		return Result.ok("商品信息保存成功！");
+	}
+
+	@ApiOperation("获取所有商品信息")
+	@GetMapping("getProductList")
+	public Result<List<ProductInfoVO>> getProductList() {
+		return Result.ok(productInfoService.getProductList());
 	}
 }

@@ -34,12 +34,6 @@ public class OrderDetail implements Serializable {
 	private Integer id;
 
 	/**
-	 * 数量
-	 */
-	@TableField("number")
-	private Integer number;
-
-	/**
 	 * 创建时间
 	 */
 	@TableField("created")
@@ -50,6 +44,12 @@ public class OrderDetail implements Serializable {
 	 */
 	@TableField("updated")
 	private LocalDateTime updated;
+
+	/**
+	 * 数量
+	 */
+	@TableField("number")
+	private Long number;
 
 	/**
 	 * 单价（单位：分）

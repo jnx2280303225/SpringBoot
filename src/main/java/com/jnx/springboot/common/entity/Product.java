@@ -38,12 +38,6 @@ public class Product implements Serializable {
 	private Integer status;
 
 	/**
-	 * 库存数量
-	 */
-	@TableField("number")
-	private Integer number;
-
-	/**
 	 * 创建时间
 	 */
 	@TableField("created")
@@ -54,6 +48,12 @@ public class Product implements Serializable {
 	 */
 	@TableField("updated")
 	private LocalDateTime updated;
+
+	/**
+	 * 库存数量
+	 */
+	@TableField("number")
+	private Long number;
 
 	/**
 	 * 单价（单位：分）

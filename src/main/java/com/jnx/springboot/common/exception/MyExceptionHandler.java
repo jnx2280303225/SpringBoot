@@ -1,5 +1,6 @@
 package com.jnx.springboot.common.exception;
 
+import com.jnx.springboot.common.constant.InfoMsgEnum;
 import com.jnx.springboot.common.message.Result;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -18,6 +19,6 @@ public class MyExceptionHandler {
 	@ResponseBody
 	public Result<String> defaultExceptionHandler(BussinessException exception) {
 		exception.printStackTrace();
-		return Result.error(exception.getCode(), exception.getMessage());
+		return Result.error(InfoMsgEnum.INTERNAL_SERVER_ERROR.code, exception.getMessage());
 	}
 }

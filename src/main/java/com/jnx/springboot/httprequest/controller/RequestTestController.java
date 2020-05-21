@@ -26,13 +26,6 @@ public class RequestTestController {
 		return Result.ok("成功");
 	}
 
-	@ApiOperation("枚举类型测试-Post请求")
-	@PostMapping("postInfo")
-	public Result<String> postInfo(@RequestBody InfoVO infoVO) {
-		System.out.println(infoVO);
-		return Result.ok("成功");
-	}
-
 	@ApiOperation("集合类型测试-Get请求")
 	@GetMapping("getList")
 	public Result<String> getList(List<Integer> list) {
@@ -40,4 +33,17 @@ public class RequestTestController {
 		return Result.ok("成功");
 	}
 
+	@ApiOperation("枚举类型测试-Post请求")
+	@PostMapping("postInfo")
+	public Result<String> postInfo(@RequestBody InfoVO infoVO) {
+		System.out.println(infoVO);
+		return Result.ok("成功");
+	}
+
+	@ApiOperation("集合类型测试-Post请求")
+	@PostMapping("postList")
+	public Result<String> postList(@RequestBody List<Integer> list) {
+		System.out.println(list);
+		return Result.ok("成功");
+	}
 }
