@@ -70,6 +70,9 @@ public class OrderInfoServiceImpl implements OrderInfoService {
 				Collectors.toMap(Product::getProductNo, Function.identity()));
 		// 一次添加操作就是一张订单
 		String orderNo = UUID.randomUUID().toString().replace("-", "");
+		// 合计数量和合计金额
+		long allNumber = 0L;
+		long allAmount = 0L;
 		// 生成订单明细集合
 		List<OrderDetail> orderDetailList = new ArrayList<>(orderDeatilFormList.size());
 		for (OrderDeatilForm orderDeatilForm : orderDeatilFormList) {
@@ -80,9 +83,12 @@ public class OrderInfoServiceImpl implements OrderInfoService {
 						+ "的商品，请检查商品号！");
 				throw ExceptionConstant.PRODUCT_NO_ERROR;
 			}
+			long amount = orderDeatilForm.getNumber() * product.getPrice();
+			allNumber += orderDeatilForm.getNumber();
+			allAmount += amount;
 			// 封装成订单明细对象
 			OrderDetail orderDetail = new OrderDetail();
-
+			orderDetail.setProductNo(product.getProductNo());
 			orderDetailList.add(orderDetail);
 		}
 
