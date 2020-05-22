@@ -22,7 +22,7 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("order_detail")
+@TableName("`order_detail`")
 public class OrderDetail implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -30,50 +30,54 @@ public class OrderDetail implements Serializable {
 	/**
 	 * 主键
 	 */
-	@TableId(value = "id", type = IdType.AUTO)
+	@TableId(value = "`id`", type = IdType.AUTO)
 	private Integer id;
 
 	/**
 	 * 创建时间
 	 */
-	@TableField("created")
+	@TableField("`created`")
 	private LocalDateTime created;
 
 	/**
 	 * 修改时间
 	 */
-	@TableField("updated")
+	@TableField("`updated`")
 	private LocalDateTime updated;
 
 	/**
 	 * 数量
 	 */
-	@TableField("number")
+	@TableField("`number`")
 	private Long number;
 
 	/**
 	 * 单价（单位：分）
 	 */
-	@TableField("price")
+	@TableField("`price`")
 	private Long price;
 
 	/**
 	 * 金额（单位：分）
 	 */
-	@TableField("amount")
+	@TableField("`amount`")
 	private Long amount;
 
 	/**
 	 * 订单号
 	 */
-	@TableField("orderNo")
+	@TableField("`orderNo`")
 	private String orderNo;
 
 	/**
 	 * 商品号
 	 */
-	@TableField("productNo")
+	@TableField("`productNo`")
 	private String productNo;
 
-
+	/**
+	 * 商品名称
+	 */
+	@TableField("`productName`")
+	private String productName;
 }

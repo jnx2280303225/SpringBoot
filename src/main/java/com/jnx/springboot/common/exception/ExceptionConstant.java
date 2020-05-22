@@ -12,5 +12,9 @@ public final class ExceptionConstant {
 
 	public static final BussinessException ORDER_DETAIL_EMPTY = new BussinessException(1, "订单明细不能为空");
 
-	public static final BussinessException PRODUCT_NO_ERROR = new BussinessException(2,"商品号错误");
+	public static final BussinessException PRODUCT_NO_ERROR = new BussinessException(2, "商品号错误");
+
+	public static final BussinessException PRODUCT_NUMBER_LACK = new BussinessException(3, "商品库存不足");
+
+	public static final BussinessException ORDER_NO_ERROR = new BussinessException(4, "订单号错误");
 }

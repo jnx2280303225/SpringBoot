@@ -1,7 +1,7 @@
 package com.jnx.springboot.common.exception;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.experimental.Accessors;
 
 /**
@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
  * @author 蒋楠鑫
  * @date 2020/5/15
  */
-@Data
+@Getter
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 public class BussinessException extends RuntimeException {

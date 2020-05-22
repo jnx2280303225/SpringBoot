@@ -45,7 +45,7 @@ public class Generator {
 	/**
 	 * 生成的包名
 	 */
-	private final static String PACKAGE_NAME = "com.jnx";
+	private final static String PACKAGE_NAME = "com.jnx.springboot.common";
 
 	/**
 	 * 要生成的表名

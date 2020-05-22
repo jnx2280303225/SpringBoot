@@ -1,5 +1,6 @@
 package com.jnx.springboot.concurrent.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.jnx.springboot.common.constant.CommonStatusEnum;
 import com.jnx.springboot.common.entity.Product;
@@ -76,8 +77,7 @@ public class ProductInfoServiceImpl implements ProductInfoService {
 		List<ProductInfoVO> list = new ArrayList<>(productList.size());
 		for (Product product : productList) {
 			ProductInfoVO productInfoVO = new ProductInfoVO();
-			productInfoVO.setProductNo(product.getProductNo()).setName(product.getName()).setNumber(product.getNumber())
-					.setPrice(product.getPrice()).setRemark(product.getRemark());
+			BeanUtil.copyProperties(product, productInfoVO);
 			list.add(productInfoVO);
 		}
 		return list;

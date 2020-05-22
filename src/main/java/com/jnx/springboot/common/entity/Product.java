@@ -3,6 +3,7 @@ package com.jnx.springboot.common.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -21,6 +22,7 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
+@TableName("`product`")
 public class Product implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -28,55 +30,55 @@ public class Product implements Serializable {
 	/**
 	 * 主键
 	 */
-	@TableId(value = "id", type = IdType.AUTO)
+	@TableId(value = "`id`", type = IdType.AUTO)
 	private Integer id;
 
 	/**
 	 * 状态（1-启用，0-停用）
 	 */
-	@TableField("status")
+	@TableField("`status`")
 	private Integer status;
 
 	/**
 	 * 创建时间
 	 */
-	@TableField("created")
+	@TableField("`created`")
 	private LocalDateTime created;
 
 	/**
 	 * 修改时间
 	 */
-	@TableField("updated")
+	@TableField("`updated`")
 	private LocalDateTime updated;
 
 	/**
 	 * 库存数量
 	 */
-	@TableField("number")
+	@TableField("`number`")
 	private Long number;
 
 	/**
 	 * 单价（单位：分）
 	 */
-	@TableField("price")
+	@TableField("`price`")
 	private Long price;
 
 	/**
 	 * 商品号
 	 */
-	@TableField("productNo")
+	@TableField("`productNo`")
 	private String productNo;
 
 	/**
 	 * 商品名称
 	 */
-	@TableField("name")
+	@TableField("`name`")
 	private String name;
 
 	/**
 	 * 备注
 	 */
-	@TableField("remark")
+	@TableField("`remark`")
 	private String remark;
 
 

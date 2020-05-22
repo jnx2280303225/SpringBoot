@@ -1,6 +1,8 @@
 package com.jnx.springboot.concurrent.service;
 
 import com.jnx.springboot.concurrent.form.OrderDeatilForm;
+import com.jnx.springboot.concurrent.form.OrderStatusForm;
+import com.jnx.springboot.concurrent.vo.OrderInfoVO;
 
 import java.util.List;
 
@@ -18,4 +20,18 @@ public interface OrderInfoService {
 	 * @param orderDeatilFormList 订单明细信息集合
 	 */
 	void saveOrderInfo(List<OrderDeatilForm> orderDeatilFormList);
+
+	/**
+	 * 修改订单状态
+	 *
+	 * @param orderStatusForm 订单信息
+	 */
+	void updateOrderStatus(OrderStatusForm orderStatusForm);
+
+	/**
+	 * 获取所有的订单信息
+	 *
+	 * @return 订单信息集合
+	 */
+	List<OrderInfoVO> getOrderInfo();
 }

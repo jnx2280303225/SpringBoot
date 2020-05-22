@@ -3,6 +3,7 @@ package com.jnx.springboot.common.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -21,6 +22,7 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
+@TableName("`order`")
 public class Order implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -28,49 +30,49 @@ public class Order implements Serializable {
 	/**
 	 * 主键
 	 */
-	@TableId(value = "id", type = IdType.AUTO)
+	@TableId(value = "`id`", type = IdType.AUTO)
 	private Integer id;
 
 	/**
 	 * 订单状态（0-未支付，1-已支付，2-已取消，3-已删除，4-已退款）
 	 */
-	@TableField("status")
+	@TableField("`status`")
 	private Integer status;
 
 	/**
 	 * 创建时间
 	 */
-	@TableField("create")
+	@TableField("`create`")
 	private LocalDateTime create;
 
 	/**
 	 * 修改时间
 	 */
-	@TableField("updated")
+	@TableField("`updated`")
 	private LocalDateTime updated;
 
 	/**
 	 * 数量
 	 */
-	@TableField("number")
+	@TableField("`number`")
 	private Long number;
 
 	/**
 	 * 金额（单位：分）
 	 */
-	@TableField("amount")
+	@TableField("`amount`")
 	private Long amount;
 
 	/**
 	 * 下单时间（格式yyyy-MM-dd HH:mm:ss）
 	 */
-	@TableField("orderTime")
+	@TableField("`orderTime`")
 	private String orderTime;
 
 	/**
 	 * 订单号
 	 */
-	@TableField("orderNo")
+	@TableField("`orderNo`")
 	private String orderNo;
 
 
