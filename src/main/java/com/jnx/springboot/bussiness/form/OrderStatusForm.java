@@ -1,6 +1,6 @@
-package com.jnx.springboot.concurrent.form;
+package com.jnx.springboot.bussiness.form;
 
-import com.jnx.springboot.concurrent.constant.OrderStatusEnum;
+import com.jnx.springboot.bussiness.constant.OrderStatusEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

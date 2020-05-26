@@ -1,4 +1,4 @@
-package com.jnx.springboot.concurrent.form;
+package com.jnx.springboot.bussiness.form;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

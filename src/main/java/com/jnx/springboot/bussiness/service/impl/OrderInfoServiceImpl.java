@@ -1,4 +1,4 @@
-package com.jnx.springboot.concurrent.service.impl;
+package com.jnx.springboot.bussiness.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -10,12 +10,12 @@ import com.jnx.springboot.common.exception.ExceptionConstant;
 import com.jnx.springboot.common.mapper.OrderDetailMapper;
 import com.jnx.springboot.common.mapper.OrderMapper;
 import com.jnx.springboot.common.mapper.ProductMapper;
-import com.jnx.springboot.concurrent.constant.OrderStatusEnum;
-import com.jnx.springboot.concurrent.form.OrderDeatilForm;
-import com.jnx.springboot.concurrent.form.OrderStatusForm;
-import com.jnx.springboot.concurrent.service.OrderInfoService;
-import com.jnx.springboot.concurrent.vo.OrderDetailVO;
-import com.jnx.springboot.concurrent.vo.OrderInfoVO;
+import com.jnx.springboot.bussiness.constant.OrderStatusEnum;
+import com.jnx.springboot.bussiness.form.OrderDeatilForm;
+import com.jnx.springboot.bussiness.form.OrderStatusForm;
+import com.jnx.springboot.bussiness.service.OrderInfoService;
+import com.jnx.springboot.bussiness.vo.OrderDetailVO;
+import com.jnx.springboot.bussiness.vo.OrderInfoVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

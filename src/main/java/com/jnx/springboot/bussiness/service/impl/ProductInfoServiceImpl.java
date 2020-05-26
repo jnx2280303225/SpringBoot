@@ -1,4 +1,4 @@
-package com.jnx.springboot.concurrent.service.impl;
+package com.jnx.springboot.bussiness.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -6,9 +6,9 @@ import com.jnx.springboot.common.constant.CommonStatusEnum;
 import com.jnx.springboot.common.entity.Product;
 import com.jnx.springboot.common.exception.ExceptionConstant;
 import com.jnx.springboot.common.mapper.ProductMapper;
-import com.jnx.springboot.concurrent.form.ProductForm;
-import com.jnx.springboot.concurrent.service.ProductInfoService;
-import com.jnx.springboot.concurrent.vo.ProductInfoVO;
+import com.jnx.springboot.bussiness.form.ProductForm;
+import com.jnx.springboot.bussiness.service.ProductInfoService;
+import com.jnx.springboot.bussiness.vo.ProductInfoVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;

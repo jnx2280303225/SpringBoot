@@ -1,9 +1,9 @@
-package com.jnx.springboot.concurrent.controller;
+package com.jnx.springboot.bussiness.controller;
 
 import com.jnx.springboot.common.message.Result;
-import com.jnx.springboot.concurrent.form.ProductForm;
-import com.jnx.springboot.concurrent.service.ProductInfoService;
-import com.jnx.springboot.concurrent.vo.ProductInfoVO;
+import com.jnx.springboot.bussiness.form.ProductForm;
+import com.jnx.springboot.bussiness.service.ProductInfoService;
+import com.jnx.springboot.bussiness.vo.ProductInfoVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

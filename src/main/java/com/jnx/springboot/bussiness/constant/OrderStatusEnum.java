@@ -1,4 +1,4 @@
-package com.jnx.springboot.concurrent.constant;
+package com.jnx.springboot.bussiness.constant;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

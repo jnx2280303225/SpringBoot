@@ -1,4 +1,4 @@
-package com.jnx.springboot.javase;
+package com.jnx.springboot.javase.basic;
 
 import java.util.*;
 
@@ -8,7 +8,7 @@ import java.util.*;
  * @author 蒋楠鑫
  * @date 2020-02-08
  */
-public class StringTest {
+public class StringDemo {
 
 	public static void main(String[] args) {
 		String string = "ddddaaaass1111111111111";

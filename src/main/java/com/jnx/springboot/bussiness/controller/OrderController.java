@@ -1,11 +1,11 @@
-package com.jnx.springboot.concurrent.controller;
+package com.jnx.springboot.bussiness.controller;
 
 import com.jnx.springboot.common.exception.ExceptionConstant;
 import com.jnx.springboot.common.message.Result;
-import com.jnx.springboot.concurrent.form.OrderDeatilForm;
-import com.jnx.springboot.concurrent.form.OrderStatusForm;
-import com.jnx.springboot.concurrent.service.OrderInfoService;
-import com.jnx.springboot.concurrent.vo.OrderInfoVO;
+import com.jnx.springboot.bussiness.form.OrderDeatilForm;
+import com.jnx.springboot.bussiness.form.OrderStatusForm;
+import com.jnx.springboot.bussiness.service.OrderInfoService;
+import com.jnx.springboot.bussiness.vo.OrderInfoVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

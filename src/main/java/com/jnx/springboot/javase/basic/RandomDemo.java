@@ -1,4 +1,4 @@
-package com.jnx.springboot.javase;
+package com.jnx.springboot.javase.basic;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @author 蒋楠鑫
  * @date 2020-02-26
  */
-public class RandomTest {
+public class RandomDemo {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);

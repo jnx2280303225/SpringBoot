@@ -1,4 +1,4 @@
-package com.jnx.springboot.concurrent.vo;
+package com.jnx.springboot.bussiness.vo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

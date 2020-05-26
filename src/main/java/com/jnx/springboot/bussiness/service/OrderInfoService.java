@@ -1,8 +1,8 @@
-package com.jnx.springboot.concurrent.service;
+package com.jnx.springboot.bussiness.service;
 
-import com.jnx.springboot.concurrent.form.OrderDeatilForm;
-import com.jnx.springboot.concurrent.form.OrderStatusForm;
-import com.jnx.springboot.concurrent.vo.OrderInfoVO;
+import com.jnx.springboot.bussiness.form.OrderDeatilForm;
+import com.jnx.springboot.bussiness.form.OrderStatusForm;
+import com.jnx.springboot.bussiness.vo.OrderInfoVO;
 
 import java.util.List;
 
