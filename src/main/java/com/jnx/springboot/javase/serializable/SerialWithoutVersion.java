@@ -17,13 +17,13 @@ import java.io.ObjectInputStream;
 public class SerialWithoutVersion {
 
 	public static void main(String[] args) {
-		String fileName = "./src/main/resources/file/userNoVersionFile.txt";
+		String fileName = "./src/main/resources/file/userWithoutVersionFile";
 		// 将对象进行反序列化
-		ObjectInputStream inputStream = null;
+		ObjectInputStream inputStream;
 		try {
 			inputStream = new ObjectInputStream(new FileInputStream(fileName));
-			UserNoVersion userNoVersion = (UserNoVersion) inputStream.readObject();
-			System.out.println(userNoVersion);
+			UserWithoutVersion userWithoutVersion = (UserWithoutVersion) inputStream.readObject();
+			System.out.println(userWithoutVersion);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

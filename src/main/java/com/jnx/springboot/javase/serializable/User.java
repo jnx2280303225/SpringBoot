@@ -24,9 +24,4 @@ public class User implements Serializable {
 	 * 姓名
 	 */
 	private String name;
-
-	/**
-	 * 年龄
-	 */
-	private Integer age;
 }

@@ -17,9 +17,9 @@ import java.io.ObjectInputStream;
 public class ChangeVersion {
 
 	public static void main(String[] args) {
-		String fileName = "./src/main/resources/file/user.txt";
+		String fileName = "./src/main/resources/file/user";
 		// 将对象进行反序列化
-		ObjectInputStream inputStream = null;
+		ObjectInputStream inputStream;
 		try {
 			inputStream = new ObjectInputStream(new FileInputStream(fileName));
 			User user = (User) inputStream.readObject();

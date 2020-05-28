@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @date 2020/5/26
  */
 @Data
-public class UserNoVersion implements Serializable {
+public class UserWithoutVersion implements Serializable {
 
 	/**
 	 * 用户工号

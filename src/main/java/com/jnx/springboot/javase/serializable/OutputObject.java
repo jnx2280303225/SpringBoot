@@ -17,22 +17,20 @@ public class OutputObject {
 	public static void main(String[] args) {
 		String fileDir = "./src/main/resources/file/";
 		// 没有serialVersionUID
-		UserNoVersion userNoVersion = new UserNoVersion();
-		userNoVersion.setUserNo("20200526");
-		userNoVersion.setName("未显示指定serialVersionUID");
-		userNoVersion.setAge(25);
+		UserWithoutVersion userWithoutVersion = new UserWithoutVersion();
+		userWithoutVersion.setUserNo("20200526");
+		userWithoutVersion.setName("未显示指定serialVersionUID");
 		// 有serialVersionUID
 		User user = new User();
 		user.setUserNo("20200526");
 		user.setName("指定serialVersionUID，并手动修改");
-		user.setAge(25);
 		// 分别写入文件
 		ObjectOutputStream outputStream = null;
 		try {
-			FileOutputStream userNoVersionFile = new FileOutputStream(fileDir + "userNoVersionFile.txt");
-			FileOutputStream userFile = new FileOutputStream(fileDir + "user.txt");
-			outputStream = new ObjectOutputStream(userNoVersionFile);
-			outputStream.writeObject(userNoVersion);
+			FileOutputStream userWithoutVersionFile = new FileOutputStream(fileDir + "userWithoutVersionFile");
+			FileOutputStream userFile = new FileOutputStream(fileDir + "user");
+			outputStream = new ObjectOutputStream(userWithoutVersionFile);
+			outputStream.writeObject(userWithoutVersion);
 			outputStream = new ObjectOutputStream(userFile);
 			outputStream.writeObject(user);
 		} catch (IOException e) {
