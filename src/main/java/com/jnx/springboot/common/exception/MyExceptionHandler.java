@@ -19,6 +19,6 @@ public class MyExceptionHandler {
 	@ResponseBody
 	public Result<String> defaultExceptionHandler(BussinessException exception) {
 		exception.printStackTrace();
-		return Result.error(InfoMsgEnum.INTERNAL_SERVER_ERROR.code, exception.getMessage());
+		return Result.error(InfoMsgEnum.SERVER_ERROR.code, exception.getMessage());
 	}
 }

@@ -13,7 +13,10 @@ public enum InfoMsgEnum {
 	 */
 	OK(200, "操作成功!"),
 
-	INTERNAL_SERVER_ERROR(500, "操作失败,服务器出现异常!");
+	/**
+	 * 500 --- 服务器出现异常
+	 */
+	SERVER_ERROR(500, "操作失败，服务器出现异常！");
 
 	public Integer code;
 

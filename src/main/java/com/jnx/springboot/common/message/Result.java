@@ -55,7 +55,7 @@ public class Result<T> implements Serializable {
 	 */
 	public static Result<String> error(String message) {
 		Result<String> result = new Result<>();
-		result.code = InfoMsgEnum.INTERNAL_SERVER_ERROR.code;
+		result.code = InfoMsgEnum.SERVER_ERROR.code;
 		result.message = message;
 		return result;
 	}
