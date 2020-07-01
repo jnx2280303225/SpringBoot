@@ -20,9 +20,18 @@ import java.util.Map;
 public class TwoNumberSum {
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(twoSum(new int[]{2, 7, 11, 15}, 9)));
+        int[] nums = {2, 7, 11, 15};
+        twoSum(nums, 9);
+        System.out.println(Arrays.toString(nums));
     }
 
+    /**
+     * 利用HashMap来搜索结果
+     *
+     * @param nums   数组
+     * @param target 和的目标值
+     * @return 两个整数组成的数组
+     */
     public static int[] twoSum(int[] nums, int target) {
         // 数组转成Map，以值做为键，索引作为值
         Map<Integer, Integer> map = new HashMap<>(nums.length);

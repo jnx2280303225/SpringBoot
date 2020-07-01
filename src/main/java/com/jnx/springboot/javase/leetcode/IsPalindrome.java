@@ -22,6 +22,12 @@ public class IsPalindrome {
         System.out.println(isPalindrome("race a car"));
     }
 
+    /**
+     * 双指针遍历
+     *
+     * @param s 给定的字符串
+     * @return 是否为回文串
+     */
     public static boolean isPalindrome(String s) {
         // 非空判断
         if (s == null || s.isEmpty()) {

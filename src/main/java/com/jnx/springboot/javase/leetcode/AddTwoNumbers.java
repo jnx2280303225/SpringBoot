@@ -34,6 +34,13 @@ public class AddTwoNumbers {
         System.out.println(sb.reverse().toString());
     }
 
+    /**
+     * 链表，满10要进位会多一个子节点
+     *
+     * @param l1 第一个链表
+     * @param l2 第二个链表
+     * @return 求和结果的链表
+     */
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         // 两个数字相加超过10就需要加一，默认能加0，由于是逆序因此需要进位的其实是下一个节点上的val
         ListNode sumListNode = new ListNode(0);

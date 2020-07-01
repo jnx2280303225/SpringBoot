@@ -26,6 +26,13 @@ public class ThreeSumClosest {
         System.out.println(threeSumClosest(nums, 1));
     }
 
+    /**
+     * 双指针遍历
+     *
+     * @param nums   数组
+     * @param target 目标值
+     * @return 最接近的三个数的和
+     */
     public static int threeSumClosest(int[] nums, int target) {
         // 先按照升序排序
         Arrays.sort(nums);
