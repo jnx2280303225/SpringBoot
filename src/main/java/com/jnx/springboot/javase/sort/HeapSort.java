@@ -27,7 +27,7 @@ public class HeapSort {
             // 第一个非叶子节点从下至上，从右至左调整
             adjustHeap(arr, i, arr.length);
         }
-        // 调整堆结构+交换堆顶元素与末尾元素
+        // 调整堆结构+交换堆顶元素与末尾元素，升序排序
         for (int i = arr.length - 1; i > 0; i--) {
             int temp = arr[i];
             arr[i] = arr[0];
@@ -49,7 +49,7 @@ public class HeapSort {
         int temp = arr[index];
         // 从i结点的左子结点开始，也就是2i+1处开始
         for (int i = index * 2 + 1; i < length; i = i * 2 + 1) {
-            // 如果左子结点小于右子结点，k指向右子结点
+            // 如果左子结点小于右子结点，j指向右子结点
             if (i + 1 < length && arr[i] < arr[i + 1]) {
                 i++;
             }

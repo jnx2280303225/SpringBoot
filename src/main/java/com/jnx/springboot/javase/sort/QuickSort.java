@@ -3,7 +3,7 @@ package com.jnx.springboot.javase.sort;
 import java.util.Arrays;
 
 /**
- * 快速排序
+ * 快速排序（分治思想）
  *
  * @author 蒋楠鑫
  * @date 2020-02-17
