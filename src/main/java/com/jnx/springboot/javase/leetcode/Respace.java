@@ -68,6 +68,7 @@ public class Respace {
     }
 
     static class Trie {
+
         /**
          * 下一个字符数组
          */
