@@ -26,6 +26,7 @@ public class KthSmallest {
     public static void main(String[] args) {
         int[][] matrix = {{1, 5, 9}, {10, 11, 13}, {12, 13, 15}};
         System.out.println(kthSmallest(matrix, 1));
+        System.out.println(kthSmallest2(matrix, 1));
     }
 
     /**
