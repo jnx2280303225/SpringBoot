@@ -3,6 +3,7 @@
 	<property name="app" value="springboot"/>
 	<property name="log.dir" value="./logs"/>
 	<property name="log.level" value="DEBUG"/>
+    <property name="env" value="DEV"/>
 
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>${log.dir}/${app}.log</file>
