@@ -1,4 +1,4 @@
-package com.jnx.springboot.javase.tree;
+package com.jnx.springboot.algorithm.tree;
 
 /**
  * 删点成林算法实现

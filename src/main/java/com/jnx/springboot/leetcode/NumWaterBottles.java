@@ -1,4 +1,4 @@
-package com.jnx.springboot.javase.leetcode;
+package com.jnx.springboot.leetcode;
 
 /**
  * [1518]换酒问题

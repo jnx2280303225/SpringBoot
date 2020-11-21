@@ -1,4 +1,4 @@
-package com.jnx.springboot.javase.leetcode;
+package com.jnx.springboot.leetcode;
 
 import java.util.Arrays;
 import java.util.HashMap;

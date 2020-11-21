@@ -1,4 +1,4 @@
-package com.jnx.springboot.javase.leetcode;
+package com.jnx.springboot.leetcode;
 
 /**
  * [209]长度最小的子数组

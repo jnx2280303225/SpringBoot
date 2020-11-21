@@ -1,4 +1,4 @@
-package com.jnx.springboot.javase.leetcode;
+package com.jnx.springboot.leetcode;
 
 /**
  * [125]验证回文串

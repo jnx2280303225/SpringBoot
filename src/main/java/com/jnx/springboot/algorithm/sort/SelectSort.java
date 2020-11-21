@@ -1,4 +1,4 @@
-package com.jnx.springboot.javase.sort;
+package com.jnx.springboot.algorithm.sort;
 
 import java.util.Arrays;
 

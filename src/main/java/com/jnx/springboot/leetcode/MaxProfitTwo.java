@@ -1,4 +1,4 @@
-package com.jnx.springboot.javase.leetcode;
+package com.jnx.springboot.leetcode;
 
 /**
  * [122]买卖股票的最佳时机II
