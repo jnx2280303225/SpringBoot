@@ -30,7 +30,7 @@
         <druid.version>1.1.20</druid.version>
 		<hutool.version>5.2.5</hutool.version>
         <commons-io.version>2.5</commons-io.version>
-        <jackson.version>2.7.3</jackson.version>
+        <jackson.version>2.12.1</jackson.version>
 		<!--docker镜像名称-->
 		<docker.image.prefix>jnx</docker.image.prefix>
 	</properties>
