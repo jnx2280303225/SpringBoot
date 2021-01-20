@@ -29,6 +29,8 @@
         <junit.version>4.11</junit.version>
         <druid.version>1.1.20</druid.version>
 		<hutool.version>5.2.5</hutool.version>
+        <commons-io.version>2.5</commons-io.version>
+        <jackson.version>2.7.3</jackson.version>
 		<!--docker镜像名称-->
 		<docker.image.prefix>jnx</docker.image.prefix>
 	</properties>
@@ -159,6 +161,30 @@
 			<artifactId>hutool-all</artifactId>
 			<version>${hutool.version}</version>
 		</dependency>
+
+        <!--io工具-->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+
+        <!--jackson依赖-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
 	</dependencies>
 
 	<build>
