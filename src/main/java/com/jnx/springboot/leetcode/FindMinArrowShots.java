@@ -1,7 +1,5 @@
 package com.jnx.springboot.leetcode;
 
-import java.time.OffsetDateTime;
-
 /**
  * [452]用最少数量的箭引爆气球
  * 在二维空间中有许多球形的气球。对于每个气球，提供的输入是水平方向上，气球直径的开始和结束坐标。
@@ -32,9 +30,7 @@ import java.time.OffsetDateTime;
 public class FindMinArrowShots {
 
     public static void main(String[] args) {
-        // LocalDate yesterday = LocalDate.now().minusDays(1);
-        // System.out.println(yesterday.atStartOfDay(ZoneId.systemDefault()).toOffsetDateTime());
-        System.out.println(OffsetDateTime.now().hashCode());
+
     }
 
     /**

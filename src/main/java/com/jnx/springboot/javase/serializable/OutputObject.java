@@ -33,6 +33,7 @@ public class OutputObject {
 			outputStream.writeObject(userWithoutVersion);
 			outputStream = new ObjectOutputStream(userFile);
 			outputStream.writeObject(user);
+            System.out.println("对象序列化成文件");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
