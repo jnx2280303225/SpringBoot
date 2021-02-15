@@ -1,5 +1,7 @@
 package com.jnx.springboot.leetcode;
 
+import java.util.UUID;
+
 /**
  * [452]用最少数量的箭引爆气球
  * 在二维空间中有许多球形的气球。对于每个气球，提供的输入是水平方向上，气球直径的开始和结束坐标。
@@ -21,7 +23,7 @@ package com.jnx.springboot.leetcode;
  * 提示：
  * 0 <= points.length <= 104
  * points[i].length == 2
- * -231 <= xstart < xend <= 231 - 1
+ * -2^31 <= xstart < xend <= 2^31 - 1
  * Related Topics 贪心算法 排序
  *
  * @author 蒋楠鑫
@@ -30,6 +32,7 @@ package com.jnx.springboot.leetcode;
 public class FindMinArrowShots {
 
     public static void main(String[] args) {
+        System.out.println(UUID.randomUUID().toString().replace("-",""));
 
     }
 
